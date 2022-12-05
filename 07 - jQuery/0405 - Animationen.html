@@ -1,0 +1,42 @@
+<!Doctype html>
+<html lang="de-DE">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Funktionen in Javascript</title>
+    <script src="jquery-3.3.1.min.js"></script>
+    <style>
+        #viereck{
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="viereck"></div>
+    <script>
+        var active = true;
+        $("#viereck").click(function(){
+            if (active) {
+                $("#viereck").animate({width: "400px", height: "400px", 
+                marginLeft:"50px", marginTop:"50px", borderRadius: "50%"}, 
+                5000, function(){
+                $(this).css("background-color", "lightgreen");
+                active = false;
+            }
+            else {
+                $("#viereck").animate({width: "200px", height: "200px", 
+                marginLeft:"20px", marginTop:"20px", borderRadius: "100%"}, 
+                5000, function(){
+                $(this).css("background-color", "lightblue");
+                active = true;
+            }
+        });
+            
+        
+        
+    </script>
+</body>
+</html>

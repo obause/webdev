@@ -1,0 +1,71 @@
+<!Doctype html>
+<html lang="de-DE">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zitate</title>
+    <style>
+        .page-header {
+            margin: 0px;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            text-align: center;
+            background-color:cornflowerblue;
+            color: white;
+        }
+        #button {
+            text-align: center;
+        }
+        button {
+            color: white;
+            margin: 20px;
+            background-color: cornflowerblue;
+            padding: 10px;
+            border-style: none;
+        }
+
+        .page-content {
+            padding: 20px;
+            margin: 0 auto;
+            max-width: 600px;
+            border: 1px dotted #1C6EA4;
+            border-radius: 9px;
+        }
+
+        #zitat {
+            text-align: center;
+        }
+
+        #author {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <header class="page-header">
+        <h1>Zitate</h1>
+    </header>
+    
+    <div id="button">
+        <button type="button" id="next">Nächstes Zitat</button>
+    </div>
+    
+    <div class="page-content">
+        <p id="zitat"></p>
+        <p id="author"></p>
+    </div>
+    
+    <script>
+        var zitate = [
+            ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Autor 1"], 
+            ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Autor 2"], 
+            ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Autor 3"], 
+            ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Autor 4"]];
+        document.getElementById("next").onclick = function(){
+            nr = Math.floor(Math.random() * zitate.length);
+            document.getElementById("zitat").innerHTML = zitate[nr][0]
+            document.getElementById("author").innerHTML = zitate[nr][1]
+        }
+    </script>
+</body>
+</html>
